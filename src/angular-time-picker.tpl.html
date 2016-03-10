@@ -3,12 +3,12 @@
 		ng-class="theme"
 		title="Time Range Filter"
 		ng-click="dropdownToggleState = !dropdownToggleState;">
-			<span ng-show="!noRange">{{ timeSettings.fromHour + ':' + timeSettings.fromMinute + ' - ' + timeSettings.toHour + ':' + timeSettings.toMinute }}</span>
-			<span ng-show="noRange">{{ timeSettings.fromHour + ':' + timeSettings.fromMinute }}</span>
-		<i class="angular-time-picker-caret" ng-class="theme"></i>
+			<span ng-show="!noRange">{{ timeSettings.fromHour + ":" + timeSettings.fromMinute + " - " + timeSettings.toHour + ":" + timeSettings.toMinute }}</span>
+			<span ng-show="noRange">{{ timeSettings.fromHour + ":" + timeSettings.fromMinute }}</span>
+		<i class="angular-time-picker-caret fa fa-caret-down" ng-class="theme"></i>
 	</span>
-	<div ng-show="dropdownToggleState" class="angular-time-picker-dropdown__menu  angular-time-picker-theme" ng-class="theme">
-		<div>
+	<div ng-show="dropdownToggleState" class="md-whiteframe-2dp angular-time-picker-dropdown__menu  angular-time-picker-theme" ng-class="theme">
+		<div class="padding-left-two padding-right-two" layout="row" layout-align="space-between center">
 			Start:
 			<span class="angular-time-picker-float--right">
 				<!-- `browser-default` class is being used as materializecss framework override default select css-->
@@ -22,7 +22,7 @@
 				</select>
 			</span>
 		</div>
-		<div class="angular-time-picker-push--top" ng-show="!noRange">
+		<div class="padding-left-two padding-right-two angular-time-picker-push--top" layout="row" layout-align="space-between center" ng-show="!noRange">
 			End:
 			<span class="angular-time-picker-float--right">
 				<select ng-model="endingHour" class="browser-default">
@@ -34,10 +34,10 @@
 				</select>
 			</span>
 		</div>
-		<div class="angular-time-picker-push--top">
-			<button ng-click="resetToOriginalTimeSettings()">Reset</button>
-			<button class="angular-time-picker-push-half--left  angular-time-picker-float--right  angular-time-picker-apply-btn" ng-click="applyTimeRangeFilter()">Apply</button>
-			<button class="angular-time-picker-push-half--left  angular-time-picker-float--right  angular-time-picker-cancel-btn" ng-click="closeTimeFilterDropdown()">Cancel</button>
+		<div class="angular-time-picker-push--top" layout="row" layout-align="space-around end">
+			<button class="md-button" ng-click="resetToOriginalTimeSettings()">Reset</button>
+			<button class="md-button" ng-click="applyTimeRangeFilter()">Apply</button>
+			<button class="md-button" ng-click="closeTimeFilterDropdown()">Cancel</button>
 		</div>
 	</div>
 </div>

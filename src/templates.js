@@ -7,12 +7,12 @@ angular.module("angular-time-picker.tpl.html", []).run(["$templateCache", functi
     "		ng-class=\"theme\"\n" +
     "		title=\"Time Range Filter\"\n" +
     "		ng-click=\"dropdownToggleState = !dropdownToggleState;\">\n" +
-    "			<span ng-show=\"!noRange\">{{ timeSettings.fromHour + ':' + timeSettings.fromMinute + ' - ' + timeSettings.toHour + ':' + timeSettings.toMinute }}</span>\n" +
-    "			<span ng-show=\"noRange\">{{ timeSettings.fromHour + ':' + timeSettings.fromMinute }}</span>\n" +
-    "		<i class=\"angular-time-picker-caret\" ng-class=\"theme\"></i>\n" +
+    "			<span ng-show=\"!noRange\">{{ timeSettings.fromHour + \":\" + timeSettings.fromMinute + \" - \" + timeSettings.toHour + \":\" + timeSettings.toMinute }}</span>\n" +
+    "			<span ng-show=\"noRange\">{{ timeSettings.fromHour + \":\" + timeSettings.fromMinute }}</span>\n" +
+    "		<i class=\"angular-time-picker-caret fa fa-caret-down\" ng-class=\"theme\"></i>\n" +
     "	</span>\n" +
-    "	<div ng-show=\"dropdownToggleState\" class=\"angular-time-picker-dropdown__menu  angular-time-picker-theme\" ng-class=\"theme\">\n" +
-    "		<div>\n" +
+    "	<div ng-show=\"dropdownToggleState\" class=\"md-whiteframe-2dp angular-time-picker-dropdown__menu  angular-time-picker-theme\" ng-class=\"theme\">\n" +
+    "		<div class=\"padding-left-two padding-right-two\" layout=\"row\" layout-align=\"space-between center\">\n" +
     "			Start:\n" +
     "			<span class=\"angular-time-picker-float--right\">\n" +
     "				<!-- `browser-default` class is being used as materializecss framework override default select css-->\n" +
@@ -26,7 +26,7 @@ angular.module("angular-time-picker.tpl.html", []).run(["$templateCache", functi
     "				</select>\n" +
     "			</span>\n" +
     "		</div>\n" +
-    "		<div class=\"angular-time-picker-push--top\" ng-show=\"!noRange\">\n" +
+    "		<div class=\"padding-left-two padding-right-two angular-time-picker-push--top\" layout=\"row\" layout-align=\"space-between center\" ng-show=\"!noRange\">\n" +
     "			End:\n" +
     "			<span class=\"angular-time-picker-float--right\">\n" +
     "				<select ng-model=\"endingHour\" class=\"browser-default\">\n" +
@@ -38,10 +38,10 @@ angular.module("angular-time-picker.tpl.html", []).run(["$templateCache", functi
     "				</select>\n" +
     "			</span>\n" +
     "		</div>\n" +
-    "		<div class=\"angular-time-picker-push--top\">\n" +
-    "			<button ng-click=\"resetToOriginalTimeSettings()\">Reset</button>\n" +
-    "			<button class=\"angular-time-picker-push-half--left  angular-time-picker-float--right  angular-time-picker-apply-btn\" ng-click=\"applyTimeRangeFilter()\">Apply</button>\n" +
-    "			<button class=\"angular-time-picker-push-half--left  angular-time-picker-float--right  angular-time-picker-cancel-btn\" ng-click=\"closeTimeFilterDropdown()\">Cancel</button>\n" +
+    "		<div class=\"angular-time-picker-push--top\" layout=\"row\" layout-align=\"space-around end\">\n" +
+    "			<button class=\"md-button\" ng-click=\"resetToOriginalTimeSettings()\">Reset</button>\n" +
+    "			<button class=\"md-button\" ng-click=\"applyTimeRangeFilter()\">Apply</button>\n" +
+    "			<button class=\"md-button\" ng-click=\"closeTimeFilterDropdown()\">Cancel</button>\n" +
     "		</div>\n" +
     "	</div>\n" +
     "</div>\n" +
